@@ -203,7 +203,7 @@ TimeTracker.prototype = {
     formatTime: function(seconds) {
         let numHours = Math.floor(seconds/3600);
         let numMins = Math.floor((seconds - (numHours * 3600)) / 60);
-        let numSecs = seconds - (numHours * 3600) - (numMins * 60);
+        let numSecs = Math.floor(seconds - (numHours * 3600) - (numMins * 60));
         if ( numSecs < 10 ) numSecs = "0" + numSecs.toString();
         if ( numMins < 10 && numHours > 0 ) numMins = "0" + numMins.toString();
         if ( numHours > 0 ) numHours = numHours.toString() + ":";
